@@ -75,8 +75,3 @@ Import db.sql
     $ docker compose up -d
     $ docker compose stop 
     $ docker stop %container_name%
-
-## BELANGRIJK
-Ik heb ACF niet included want die installeer ik via composer en ik ga niet mijn key of een paid plugin includen in een public repo. Dus om dit te kunnen gebruiken, moet er even een ACF Pro installed worden in `/app/plugins`.
-
-Het hele theme runt niet als ACF niet actief is dus dit is echt een noodzaak, maar daarvoor krijg je vanzelf een melding.
