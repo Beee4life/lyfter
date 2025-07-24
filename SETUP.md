@@ -68,6 +68,8 @@ Import db.sql
 * `$ grunt build` generates all css/js
 * `$ grunt watch` starts a watcher for scss/js
 
+Normally you would need to generate these files. For this assignment I have included the minified files in the repo already.
+
 <a name="docker"></a>
 ### Docker commands
 
