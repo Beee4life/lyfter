@@ -1,0 +1,42 @@
+.article {
+
+    &__aside {
+        @extend .archive__aside;
+    }
+
+    &__container {
+        @extend .archive__container;
+    }
+
+    &__heading {
+        @extend .archive__heading;
+    }
+
+    &__intro {
+        display:         flex;
+        flex-flow:       row nowrap;
+        justify-content: space-between;
+        margin-top:      4rem;
+
+        &--left {
+            max-width: 540px;
+        }
+
+        &--right {
+            img {
+                transform:    rotate(10deg);
+                margin-top:   1rem;
+                margin-right: 3rem;
+            }
+        }
+    }
+
+    &__main {
+        @extend .archive__main;
+    }
+
+    &--content {
+        background:    white;
+        border-bottom: 1px solid white;
+    }
+}

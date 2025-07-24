@@ -1,0 +1,131 @@
+&--image-text {
+
+    .block__bg {
+        position:   absolute;
+        background: $primaryColor;
+        z-index:    -2;
+    }
+
+    .block__image {
+        border-radius: 1rem;
+        position:      relative;
+        width:         100%;
+
+        &.skewed-background {
+            img {
+                transform:  rotate(-8deg);
+                margin-top: -1rem;
+            }
+        }
+
+        img {
+            border-radius: $borderRadius;
+            height:        100%;
+            object-fit:    cover;
+            width:         auto;
+        }
+    }
+
+    &.image--right {
+        .block__image {
+            text-align: right;
+        }
+    }
+
+    .block__text {
+        margin-top: $baseMargin;
+    }
+
+    .block__content {
+        margin-top: $baseMargin;
+        width:      100%;
+
+        @include media-w768 {
+            margin-top: 0;
+        }
+    }
+
+    &.image {
+        &--left {
+            @include media-w768 {
+                &.block--w6040 {
+                    .block__content {
+                        width: 40%;
+                    }
+
+                    .block__image {
+                        width: 60%;
+                    }
+                }
+
+                &.block--w4060 {
+                    .block__content {
+                        width: 60%;
+                    }
+
+                    .block__image {
+                        width: 40%;
+                    }
+                }
+
+                .block__image {
+                    order: 1;
+                }
+
+                .block__content {
+                    order: 2;
+                }
+            }
+        }
+
+        &--right {
+            .block__image {
+                order: 1;
+            }
+
+            .block__content {
+                order: 2;
+            }
+
+            @include media-w768 {
+                &.block--w6040 {
+                    .block__content {
+                        width: 60%;
+                    }
+
+                    .block__image {
+                        width: 40%;
+                    }
+                }
+
+                &.block--w4060 {
+                    .block__content {
+                        width: 40%;
+                    }
+
+                    .block__image {
+                        text-align: right;
+                        width:      60%;
+                    }
+                }
+
+                .block__image {
+                    order: 2;
+                }
+
+                .block__content {
+                    order: 1;
+                }
+            }
+        }
+    }
+
+    @include media-w768 {
+        &.block--w5050 {
+            .block__image,
+            .block__content {
+                width: 50%;
+            }
+        }
+    }
+}

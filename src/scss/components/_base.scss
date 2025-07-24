@@ -1,0 +1,195 @@
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+html {
+    // background-color: $bodyBackground;
+    color:       $body;
+    line-height: $baseline-line-height;
+}
+
+// Elements
+a {
+    color:           $baseColor;
+    text-decoration: none;
+    transition:      color 0.2s ease-in-out;
+
+    &:hover {
+        color: lighten($baseColor, 20%);
+    }
+}
+
+abbr[title] {
+    border-bottom: 1px dotted #2b2b2b;
+    cursor:        help;
+}
+
+address {
+    font-style:    italic;
+    margin-bottom: 1.5rem;
+}
+
+blockquote {
+    font-size:   1.375rem;
+    font-weight: 700;
+    margin:      0 2rem;
+    text-align:  center;
+}
+
+button {
+    @include buttonSetup;
+}
+
+.clear {
+    clear: both;
+}
+
+dd {
+    margin:  0;
+    padding: 0;
+}
+
+fieldset {
+    border:  0;
+    margin:  0;
+    padding: 0;
+}
+
+figure {
+    margin: 0;
+}
+
+form {
+    margin: 0;
+}
+
+h1 {
+    @include heading;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    -webkit-margin-before: 0;
+    -webkit-margin-start:  0;
+    -webkit-margin-after:  0;
+    -webkit-padding-start: 0;
+}
+
+h1 {
+    .article__intro & {
+        font-size:      5rem;
+        line-height:    100%;
+        letter-spacing: 0;
+    }
+}
+
+
+img {
+    max-width: 100%;
+    height:    auto;
+}
+
+
+p {
+    line-height:           1.5;
+    margin-top:            0;
+    margin-bottom:         1.250rem;
+    -webkit-margin-before: 0;
+    -webkit-margin-after:  0;
+
+    + p {
+        margin-top:    1.250rem;
+        margin-bottom: 0;
+    }
+}
+
+hr {
+    background-color: rgba(0, 0, 0, 0.1);
+    border:           0;
+    height:           1px;
+    margin-bottom:    1rem;
+}
+
+svg {
+    display: inline-block;
+}
+
+label {
+    cursor: pointer;
+}
+
+mark,
+ins {
+    background:      #fff9c0; // @TODO: make variable
+    border:          0;
+    color:           inherit;
+    text-decoration: none;
+}
+
+code,
+kbd,
+tt,
+var,
+samp,
+pre {
+    font-family: monospace, serif;
+    font-size:   0.938rem;
+    line-height: 1.6;
+}
+
+pre {
+    border:        1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+    max-width:     100%;
+    overflow:      auto;
+    padding:       0.75rem;
+    white-space:   pre-wrap;
+    word-wrap:     break-word;
+}
+
+.screen-reader-text {
+    position: absolute !important;
+    left:     -999rem;
+}
+
+ul {
+    -webkit-margin-before: 0;
+    -webkit-margin-start:  0;
+    -webkit-margin-after:  0;
+    -webkit-padding-start: 0;
+    margin-bottom:         1rem;
+}
+
+ul,
+ol {
+    padding-left: 1.5rem;
+
+    .entry-content & {
+        padding-left:  1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    ol,
+    ul {
+        padding-left: 1.5rem;
+    }
+}
+
+table {
+    border-bottom: 1px solid #d8d8d8; // @TODO: make variable
+    margin:        0;
+    width:         100%;
+}
+
+th,
+td {
+    border-top: 1px solid #d8d8d8; // @TODO: make variable
+    padding:    0.5rem;
+    font-size:  0.89rem;
+}

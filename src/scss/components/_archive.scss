@@ -1,0 +1,46 @@
+.archive {
+
+    &__aside {
+        box-sizing: border-box;
+        position:   relative;
+
+        @include media-w1024 {
+            @include clearFix;
+            padding-left: 1.875rem;
+            width:        18.75rem;
+        }
+    }
+
+    &__container {
+        margin:   1rem auto;
+        position: relative;
+
+        .container + & {
+            margin: 3rem auto 0 auto;
+        }
+
+        @include media-w1024 {
+            display: flex;
+        }
+
+        @media (min-width: $maxWidthplus1) {
+            padding: 0;
+        }
+    }
+
+    &__heading {
+        @include heading;
+        position: relative;
+    }
+
+    &__main {
+        box-sizing:    border-box;
+        flex:          1;
+        margin-bottom: 3rem;
+        position:      relative;
+        // padding:       1rem;
+        // border-radius: $borderRadius;
+        // border:        1px solid $body;
+    }
+}
+

@@ -1,0 +1,12 @@
+&--content {
+
+    .block__header {
+        + .block__content {
+            margin-top: 1rem;
+        }
+    }
+
+    &.has-background-color {
+        color: white;
+    }
+}

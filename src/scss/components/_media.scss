@@ -1,0 +1,28 @@
+.media {
+    position: relative;
+
+    img {
+        display: block;
+    }
+
+    svg {
+        display:   block;
+        width:     100%;
+        max-width: 100%;
+    }
+
+    embed,
+    iframe,
+    object {
+        @include stretch;
+    }
+
+    &--video {
+        height:         0;
+        overflow:       hidden;
+        padding-bottom: 56.25%;
+        margin-top:     auto;
+        margin-bottom:  auto;
+        width:          100%;
+    }
+}

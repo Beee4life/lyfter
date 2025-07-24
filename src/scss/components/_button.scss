@@ -1,0 +1,51 @@
+.button {
+    @include buttonSetup(
+            $backgroundColor: $primaryColor,
+            $padding:         1rem 2rem,
+            $borderRadius:    30px,
+            $fontSize:        1rem,
+            $fontWeight:      400) {
+        text-decoration: none;
+
+        &:hover {
+            // background-color: darken($primaryColor, 5%);
+        }
+    }
+
+    .site__header-buttons & {
+        margin-right: 1rem;
+    }
+
+    &--header-cta,
+    &--header-support {
+        display:       none;
+        padding:       5px 15px;
+        font-size:     1rem;
+        box-shadow:    none;
+        transition:    all .25s ease-in-out;
+        border-radius: 50px;
+
+        @include media-w480 {
+            display: inline-block;
+        }
+
+        @include media-w640 {
+            padding: 10px 30px;
+        }
+    }
+
+    &--header-support {
+        background: transparent;
+        color:      $bodyColor;
+        border:     1px solid $borderColor;
+        display:    inline-block;
+    }
+
+    &--small {
+        padding:     5px 10px;
+        font-size:   $small;
+        line-height: initial;
+        height:      initial;
+        margin:      0;
+    }
+}

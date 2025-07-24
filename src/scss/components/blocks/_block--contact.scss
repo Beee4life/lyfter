@@ -1,0 +1,31 @@
+&--contact {
+    text-align: center;
+
+    @include media-w768 {
+        text-align: left;
+    }
+
+    .block__content {
+        flex: 5;
+    }
+
+    .block__button {
+        flex:       4;
+        text-align: center;
+    }
+
+    &.buttons-left {
+        .block__content {
+            order: 2;
+            text-align: center;
+
+            @include media-w768 {
+                text-align: right;
+            }
+        }
+
+        .block__button {
+            order: 1;
+        }
+    }
+}

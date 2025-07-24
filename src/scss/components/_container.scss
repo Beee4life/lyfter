@@ -1,0 +1,52 @@
+.container {
+    margin:    0 auto;
+    max-width: $maxWidth;
+    padding:   0 2.5%;
+    position:  relative;
+
+    @media screen and (min-width: $maxWidthplus1) {
+        padding: 0;
+    }
+
+    .block--contact &,
+    .block--image-text & {
+        @include media-w768 {
+            display:   flex;
+            flex-flow: row nowrap;
+            width:     100%;
+        }
+    }
+
+    .block--image-text & {
+        @include media-w768 {
+            gap:         2rem;
+            align-items: center;
+        }
+    }
+
+    .block--fullwidth & {
+        max-width: initial;
+    }
+
+    .block--half-container & {
+        max-width: $maxWidth / 2;
+    }
+
+    .block--contact & {
+        @include media-w768 {
+            align-items:     center;
+            justify-content: center;
+        }
+    }
+
+    .site__header & {
+        display:         flex;
+        flex-flow:       row nowrap;
+        justify-content: space-between;
+        align-items:     center;
+
+        @include media-w768 {
+            gap: 2rem;
+        }
+    }
+}

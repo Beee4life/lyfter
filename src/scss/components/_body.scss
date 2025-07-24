@@ -1,0 +1,33 @@
+body {
+    @include font(gabarito);
+    font-size: 1rem;
+
+    &.no-scroll {
+        overflow: hidden;
+    }
+}
+
+#background {
+    position:      absolute;
+    top:           0;
+    left:          0;
+    height:        60vh;
+    width:         100%;
+    z-index:       -2;
+    background:    rgba(255, 51, 102, 0.1);
+
+    @include media-w960 {
+        height: 65vh;
+    }
+
+    @include media-w1024 {
+        border-radius: 0 0 100px 100px;
+    }
+
+    img {
+        width:      100%;
+        height:     100%;
+        object-fit: cover; /* Ensures image fills the container and is cropped properly */
+        mask-image: linear-gradient(red, transparent);
+    }
+}

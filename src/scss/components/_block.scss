@@ -1,0 +1,183 @@
+.block {
+    display:        flex;
+    flex-direction: row;
+    flex-wrap:      wrap;
+    // margin-top:     $baseMargin * 2;
+    // padding:        0 ($baseMargin / 2);
+    width:          100%;
+
+    + .block {
+        margin-top: 2 * $baseMargin;
+    }
+
+    + .block.has-background-color {
+        margin-top: $baseMargin;
+    }
+
+    &.has-background-color {
+        padding-top:    $baseMargin;
+        padding-bottom: $baseMargin;
+
+        + .block.has-background-color {
+            // @TO DECIDE: space for consecutive blocks with bg ?
+            margin-top: $baseMargin * 2;
+        }
+    }
+
+    &:first-of-type {
+        margin-top: $baseMargin;
+
+        &.has-background-color {
+            .no-title & {
+                margin-top: 0;
+            }
+        }
+    }
+
+    &__header {
+        color:          $body;
+        font-size:      3.25rem;
+        letter-spacing: 0;
+        line-height:    110%;
+        font-weight:    700;
+
+        .block__label + & {
+            margin-top: 1rem;
+        }
+
+        .block--aligncenter & {
+            text-align: center;
+        }
+
+        .block--alignright & {
+            text-align: right;
+        }
+
+        &--contact {
+            h3 {
+                font-size: 2.5rem;
+            }
+        }
+
+        &--cta {
+            font-size: 2.5rem;
+        }
+    }
+
+    &__content {
+        .block__header + & {
+            margin-top: 2 * $baseMargin;
+        }
+
+        .block--aligncenter & {
+            text-align: center;
+        }
+
+        .block--alignright & {
+            text-align: right;
+        }
+    }
+
+    &__label {
+        display:         inline-block;
+        border:          1px solid #ccc;
+        border-radius:   2.5rem;
+        padding:         0.25rem 1rem;
+        font-size:       0.85rem;
+        text-decoration: none;
+        text-align:      center;
+
+        .dot {
+            height:           0.6rem;
+            width:            0.6rem;
+            background-color: $primaryColor;
+            border-radius:    50%;
+            display:          inline-block;
+            margin-right:     0.25rem;
+        }
+
+        .article__intro & {
+            background-color: white;
+            border: 0;
+        }
+
+        &:before {
+            content: " ";
+        }
+    }
+
+    &__text {
+        // what is this ?
+        &--cta {
+            .block__header + & {
+                margin-top: $baseMargin;
+            }
+        }
+    }
+
+    &__buttons {
+        // holds 1 or more block__button
+        display:         flex;
+        flex-flow:       row wrap;
+        justify-content: flex-start;
+        margin-top:      $baseMargin;
+    }
+
+    &__button {
+        // margin-top: 1rem;
+
+        + .block__button {
+            margin-left: 1rem;
+        }
+
+        &:nth-child(2) {
+            .button {
+                .block__buttons & {
+                    background: black;
+                }
+            }
+        }
+
+        .block--aligncenter & {
+            text-align: center;
+        }
+
+        a {
+            &.button {
+                transition: all 0.2s ease-in-out;
+            }
+        }
+
+        &--contact {
+            @include media-w768 {
+                display:     inline-block;
+                margin-top:  0;
+                margin-left: 0.5rem;
+
+                .buttons-left & {
+                    margin-left:  0;
+                    margin-right: 0.5rem;
+                }
+
+                a {
+                    min-width: 11rem;
+                }
+            }
+        }
+
+        &--cta {
+            font-size:  1.5rem;
+            margin-top: $baseMargin;
+        }
+    }
+
+    &--fullwidth {
+        padding: 0;
+    }
+
+    @import "blocks/block--columns";
+    @import "blocks/block--contact";
+    @import "blocks/block--content";
+    @import "blocks/block--image-text";
+
+}

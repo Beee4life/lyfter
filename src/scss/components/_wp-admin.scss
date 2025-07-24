@@ -1,0 +1,49 @@
+.wp-admin {
+
+    .theme-info {
+        .theme-menu {
+            ul {
+                margin-left: 0;
+                position:    relative;
+            }
+
+            li {
+                box-sizing:    border-box;
+                display:       inline-block;
+                padding-right: 0.2rem;
+
+                &:after {
+                    content: " |";
+                }
+                &:last-child:after {
+                    content: "";
+                }
+            }
+        }
+
+        &__container {
+            position: relative;
+
+            .inline-block {
+                display:        inline-block;
+                margin-right:   2rem;
+                vertical-align: top;
+            }
+        }
+
+        ul {
+            list-style:  disc;
+            margin-left: 1.5rem;
+
+            ul li {
+                margin-bottom: 3px;
+            }
+        }
+
+    }
+
+    .hide,
+    .hidden {
+        display: none;
+    }
+}

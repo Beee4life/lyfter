@@ -1,0 +1,27 @@
+.hide,
+.hidden {
+    display: none;
+}
+
+.intro {
+    &__buttons,
+    &__text,
+    &__title {
+        margin-top: 1rem;
+    }
+
+    &__buttons {
+        .button {
+            + .button {
+                margin-left: 1rem;
+                background-color: $bodyColor;
+            }
+        }
+    }
+}
+
+.sidebar {
+    border:        1px solid $baseColor;
+    border-radius: $borderRadius;
+    padding:       0.5rem;
+}

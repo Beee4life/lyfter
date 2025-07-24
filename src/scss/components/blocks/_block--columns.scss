@@ -1,0 +1,124 @@
+&--columns {
+
+    &.block--center {
+        text-align: center;
+    }
+
+    .columns {
+        margin: 0 auto;
+        width:  100%;
+
+        @include media-w480 {
+            display:  grid;
+            grid-gap: 1rem;
+        }
+
+        @include media-w768 {
+            grid-gap: 1.5rem;
+        }
+
+        &.columns--w50 {
+            width: 50%;
+        }
+
+        &.columns--w75 {
+            width: 75%;
+        }
+
+        &.columns--w100 {
+            width: 100%;
+        }
+
+        @include media-w480 {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        &.columns--3,
+        &.columns--4 {
+            @include media-w640 {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+
+        &.columns--4 {
+            @include media-w768 {
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+            }
+        }
+    }
+
+    .column-item {
+        background:    white;
+        border-radius: $borderRadius;
+        display:       flex;
+        flex-flow:     column;
+        height:        100%;
+        padding:       1rem;
+
+        &.with-image {
+            justify-content: space-between;
+        }
+
+        + .column-item {
+            margin-top: $baseMargin;
+
+            @include media-w480 {
+                margin-top: 0;
+            }
+        }
+    }
+
+    &.around-columns {
+        .column-item {
+            border:        1px solid $borderColor;
+            border-radius: $borderRadius;
+        }
+
+        &.dashed .column-item {
+            border-style: dashed;
+        }
+
+        &.dotted .column-item {
+            border-style: dotted;
+        }
+    }
+
+    .column__top {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .column__link {
+        a {
+            color: $greyMid;
+        }
+    }
+
+    .column__header {
+        color:       $titleColor;
+        font-size:   1.625rem;
+        font-weight: 600;
+    }
+
+    .column__label {
+        margin-bottom: 1rem;
+
+        i {
+            background:    $secondaryColor;
+            padding:       1rem;
+            border-radius: 50%;
+            color:         $primaryColor;
+        }
+    }
+
+    .column__content {
+        font-weight: 300;
+        line-height: 170%;
+        margin-top:  1rem;
+        color:       $greyDark;
+    }
+
+    .column__image {
+        margin-top: 1rem;
+    }
+}
