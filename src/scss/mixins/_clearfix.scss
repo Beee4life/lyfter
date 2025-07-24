@@ -1,0 +1,22 @@
+@mixin clearFix {
+  clear: both;
+
+  &:before,
+  &:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+  }
+
+  &:after {
+    clear: both;
+  }
+
+  .legacy & {
+
+    &:before,
+    &:after {
+      *zoom: 1;
+    }
+  }
+
+}

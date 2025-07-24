@@ -1,0 +1,81 @@
+@mixin col( $col, $align) {
+
+    display:       flex;
+    flex-wrap:     wrap;
+    padding-left:  0;
+    padding-right: 0;
+
+    @include media-w480 {
+        padding-left:  $grid-padding;
+        padding-right: $grid-padding;
+    }
+
+    @if (100 == $col) {
+        width: 100%;
+    } @else if (80 == $col) {
+        width: 100%;
+
+        @include media-w480 {
+            width: 100%;
+        }
+        @include media-w768 {
+            width: 80%;
+        }
+
+    } @else if (70 == $col) {
+        width: 100%;
+
+        @include media-w480 {
+            width: 100%;
+        }
+        @include media-w768 {
+            width: 70%;
+        }
+
+    } @else if (50 == $col) {
+        width: 100%;
+
+        @include media-w480 {
+            width: 50%;
+        }
+    } @else if (33 == $col) {
+        width: 100%;
+
+        @include media-w768 {
+            width: calc(100% / 3);
+        }
+    } @else if (30 == $col) {
+        width: 100%;
+
+        @include media-w480 {
+            width: 100%;
+        }
+        @include media-w768 {
+            width: 30%;
+        }
+    } @else if (25 == $col) {
+        width: 100%;
+
+        @include media-w480 {
+            width: 50%;
+        }
+        @include media-w1024 {
+            width: 25%;
+        }
+    }
+
+    @content;
+
+    @if (left == $align) {
+        margin-right: auto;
+    } @else if (center == $align) {
+        margin:       auto;
+
+    } @else if (right == $align) {
+        margin-left:  auto;
+
+    } @else if (none == $align) {
+
+    }
+
+}

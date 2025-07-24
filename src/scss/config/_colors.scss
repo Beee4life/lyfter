@@ -1,0 +1,30 @@
+$greyDark:          #4d4d4d;
+$greyMid:           #aeaeae;
+$greyLight:         #f1f1f1;
+$nearBlack:         #333333;
+$offWhite:          #f5f5f5;
+$orange:            #ff5c38;
+$green:             #00D1B2;
+
+$baseColor:         $greyDark;
+$body:              #000;
+$bodyBackground:    #fff;
+$primaryColor:      $green;
+$secondaryColor:    #00D1B21A;
+$borderColor:       #0000001A;
+
+// user colors
+$bodyBackground:        var(--bg-color-site, $offWhite);
+$headerBackground:      var(--bg-color-header, transparent);
+$bodyColor:             var(--body-color, $baseColor);
+$primaryColor:          var(--primary-color, $primaryColor);
+$buttonTextColor:       var(--button-text-color, white);
+$footerTextColor:       var(--text-color-footer, $bodyColor);
+$footerBackgroundColor: var(--bg-color-footer, transparent);
+$polaroidColor:         var(--polaroid-color, white);
+
+// overrides
+$titleColor:            var(--title-color, $primaryColor);
+$linkColor:             var(--link-color, $primaryColor);
+$linkHoverColor:        var(--link-color-hover, $linkColor);
+$buttonColor:           var(--button-color, $primaryColor);

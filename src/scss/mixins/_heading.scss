@@ -1,0 +1,12 @@
+@mixin heading() {
+    color:       $baseColor;
+    font-size:   1.75em;
+    line-height: $baseline-line-height;
+    margin:      0 0 1ex;
+    padding:     0;
+    text-align:  left;
+
+    @media (min-width: 640px) {
+        font-size: 2.45rem;
+    }
+}

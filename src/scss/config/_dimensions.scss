@@ -1,0 +1,14 @@
+$maxWidth:      1360px;
+$maxWidthplus1: 1361px;
+$largeWidth:    1280px;
+$mediumWidth:   1024px;
+$smallWidth:    960px;
+$tinyWidth:     600px;
+$unit:          0.625rem;
+$grid-padding:  0.938rem;
+$headerHeight:  37px;
+$baseMargin:          1.5rem;
+
+$blockMargin:         $baseMargin;
+$borderRadius:        1.25rem;
+$buttonBorderRadius:  var(--button-border-radius, 0);

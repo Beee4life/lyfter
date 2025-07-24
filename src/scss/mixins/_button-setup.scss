@@ -1,0 +1,26 @@
+$padding: 20px;
+$height: 42px;
+
+@mixin buttonSetup(
+    $backgroundColor: #fe6449,
+    $padding: 12px 40px,
+    $borderRadius: 5px,
+    $fontSize: 1em,
+    $fontWeight: 400 ) {
+
+    $color: white;
+    display:          inline-block;
+    background-color: $backgroundColor;
+    color:            $color;
+    padding:          $padding;
+    border-radius:    $borderRadius;
+    font-size:        $fontSize;
+    font-weight:      $fontWeight;
+
+    @content;
+
+    &:hover {
+        // color: $color;
+    }
+
+}
