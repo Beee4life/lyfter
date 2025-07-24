@@ -11,7 +11,7 @@ Voor degene die het gaat checken, loop door alle stappen heen in de setup en als
 - [Git](#git)
 - [Assets](#assets)
 - [Break out BG](#breakoutbg)
-- [login](#Inloggen)
+- [Inloggen](#login)
 
 <a name="intro"></a>
 ## Intro
