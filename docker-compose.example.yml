@@ -1,0 +1,41 @@
+services:
+  db:
+    image: mariadb:10.2.19
+    ports:
+      - "3306:3306"                           # first port number can be changed
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: wordpress
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+
+  wordpress:
+    depends_on:
+      - db
+      - mailhog
+    build: ./docker
+    ports:
+      - "80:80"
+    volumes:
+      - .:/var/www/html:cached
+    restart: unless-stopped
+    environment:
+      DB_HOST: db:3306                        # change first port number, IF you changed it above
+      DB_NAME: wordpress
+      DB_PASSWORD: wordpress
+      DB_USER: wordpress
+      WP_ENV: development
+      WP_HOME: http://pets.127.0.0.1.nip.io     # can be any local domain. make sure it points to 127.0.0.1 (hosts file)
+      WP_SITEURL: http://pets.127.0.0.1.nip.io/cms
+
+  mailhog:
+    image: jcalonso/mailhog
+    ports:
+      - "8025:8025"
+    restart: unless-stopped
+
+volumes:
+  db_data:
