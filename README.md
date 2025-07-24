@@ -61,7 +61,9 @@ De assets waren niet beschikbaar in Figma. Ik weet niet of dit nu wel of niet ex
 
 In al mijn jaren dat ik dingen heb gebouwd, heb ik nog nooit moeten bouwen op basis van een Figma design waarbij ik **geen** toegang heb tot de assets dus ik hoef nooit te improviseren. Een designer wil graag dat zijn/haar werk goed wordt vertaald en dus is het niet logisch om geen access te krijgen tot de assets.
 
-Nu moest ik maar een beetje improviseren zonder correcte assets. Ik heb wel een soortgelijke iphone image gedownload om te gebruiken maar dit is natuurlijk niet optimaal.
+Dat is wat een developer doet. Die bouwt iets op aanwijzen van een designer of 'wensen'. Het is niet zo dat men zegt, ik wil graag dat je dit nabouwt, maar zie maar hoe je dat doet.
+
+Nu moest ik dus maar een beetje improviseren zonder de correcte assets. Ik heb wel een soortgelijke iphone image gedownload om te gebruiken maar dit is natuurlijk niet optimaal.
 
 Zonder de achtergronden en accenten e.d. is het moeilijk om iets goed te laten lijken.
 
@@ -71,7 +73,7 @@ Ja er is wel iets mogelijk maar die accenten e.d. maar dat zijn voornamelijk gra
 ### Break out BG
 Ik kwam er net (pas) achter dat er 2 afwijkende blokjes onderaan staan qua background. Toen ik de opdracht keek scrollde ik er door heen en mij was toen niet opgevallen dat die 2 afweken.
 
-Toen ik daarna het document steeds open had, had ik dit voor de bovenste elementen. Ik keek niet onderin omdat dit in mijn herinnering hetzelfde was als de bovenste 2.
+Toen ik daarna het document steeds open had als reference, had ik dit voor de bovenste elementen. Ik keek niet onderin omdat dit in mijn herinnering hetzelfde was als de bovenste 2.
 
 Dus ja, toegegeven, I dropped the ball a bit there. Normaal gesproken gaat er ook iets meer tijd over een opdracht en wordt die normaal gesproken besproken voor dat er wordt aangevangen (althans zo is mijn ervaring) en dan worden gotchas, zoals een afwijkende/break out background, daar besproken.
 
