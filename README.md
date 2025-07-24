@@ -45,7 +45,7 @@ Het hele theme runt niet als ACF niet actief is dus dit is echt een noodzaak, ma
 
 <a name="grunt"></a>
 ### Grunt
-CSS wordt compiled door Grunt. Ja, I know niet de meest moderne manier. Webpack of Gulp heb ik ook gebruikt. In dit project zit nog steeds Grunt in (legacy). Moet ik nog steeds een keer vervangen, maar het werkt nog en is dus geen immediate prio.
+CSS wordt compiled door Grunt. Ja, I know niet de meest moderne manier. Webpack of Gulp heb ik ook gebruikt. In dit project zit nog steeds Grunt (legacy). Moet ik nog steeds een keer vervangen, maar het werkt nog en is dus geen immediate prio.
 
 <a name="git"></a>
 ### Git
