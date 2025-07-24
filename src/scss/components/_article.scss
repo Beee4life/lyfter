@@ -13,13 +13,18 @@
     }
 
     &__intro {
-        display:         flex;
-        flex-flow:       row nowrap;
-        justify-content: space-between;
         margin-top:      4rem;
 
+        @include media-w600 {
+            display:         flex;
+            flex-flow:       row nowrap;
+            justify-content: space-between;
+        }
+
         &--left {
-            max-width: 540px;
+            @include media-w640 {
+                max-width: 540px;
+            }
         }
 
         &--right {

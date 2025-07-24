@@ -12,9 +12,14 @@
 
     &__buttons {
         .button {
+            margin-right: 0.5rem;
+
             + .button {
-                margin-left: 1rem;
                 background-color: $bodyColor;
+                @include media-w414 {
+                    margin-right: 0;
+                    margin-left: 0.5rem;
+                }
             }
         }
     }

@@ -83,9 +83,16 @@ h6 {
 
 h1 {
     .article__intro & {
-        font-size:      5rem;
         line-height:    100%;
         letter-spacing: 0;
+
+        @include media-w640 {
+            font-size: 3.5rem;
+        }
+
+        @include media-w768 {
+            font-size: 5rem;
+        }
     }
 }
 
