@@ -1,0 +1,9 @@
+{% import 'partials/macros.twig' as macro %}
+
+{% if intro.buttons %}
+    <div class="intro__buttons">
+        {% for button in intro.buttons %}
+            {{ macro.button( button.link, button.label, '', '', 'fas fa-download' ) }}
+        {% endfor %}
+    </div>
+{% endif %}

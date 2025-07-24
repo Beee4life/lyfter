@@ -1,0 +1,20 @@
+<section class="{{ get_block_classes(block,block_modifier) }}"{{ get_block_style(block) }}>
+    <div class="container">
+        {% if block.header or block.text %}
+            <div class="block__content">
+                {% include 'partials/blocks/block__header.twig' with {
+                    'header'   : block.header,
+                    'modifier' : 'contact'
+                } %}
+                {% if block.text %}
+                    <div class="block__text block__text--contact">
+                        {{ block.text }}
+                    </div>
+                {% endif %}
+            </div>
+        {% endif %}
+
+        {% include 'partials/blocks/contact-buttons.twig' %}
+
+    </div>
+</section>

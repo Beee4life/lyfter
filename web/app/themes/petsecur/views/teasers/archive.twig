@@ -1,0 +1,18 @@
+{% import 'partials/macros.twig' as macro %}
+{% if post.thumbnail %}
+    {% set image = get_image(post.thumbnail) %}
+{% endif %}
+
+<div class="archive-result">
+
+     <div class="media">
+        {{ macro.image(image, 'thumbnail', options.fallback_images.default) }}
+    </div>
+
+    <h2 class="archive-result__heading">
+        <a class="archive-result__link" href="{{ post.link }}">
+            {{ post.title }}
+        </a>
+    </h2>
+
+</div>

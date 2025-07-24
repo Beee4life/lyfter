@@ -1,0 +1,73 @@
+{% if blocks %}
+
+    {% for block in blocks %}
+
+        {% if block.acf_fc_layout == 'block_columns' %}
+
+            {% include 'partials/blocks/block--columns.twig' with {
+                'block' : block,
+                'block_modifier' : 'columns'
+            } %}
+
+        {% elseif block.acf_fc_layout == 'block_contact' %}
+
+            {% include 'partials/blocks/block--contact.twig' with {
+                'block' : block,
+                'block_modifier' : 'contact'
+            } %}
+
+        {% elseif block.acf_fc_layout == 'block_content' %}
+
+            {% include 'partials/blocks/block--content.twig' with {
+                'block' : block,
+                'block_modifier' : 'content'
+            } %}
+
+        {% elseif block.acf_fc_layout == 'block_cta' %}
+
+            {% include 'partials/blocks/block--cta.twig' with {
+                'block' : block,
+                'block_modifier' : 'cta'
+            } %}
+
+        {% elseif block.acf_fc_layout == 'block_image_text' %}
+
+            {% include 'partials/blocks/block--image-text.twig' with {
+                'block' : block,
+                'block_modifier' : 'image-text'
+            } %}
+
+        {% elseif block.acf_fc_layout == 'block_packages' %}
+
+            {% include 'partials/blocks/block--packages.twig' with {
+                'block' : block,
+                'block_modifier' : 'packages'
+            } %}
+
+        {% elseif block.acf_fc_layout == 'block_rates' %}
+
+            {% include 'partials/blocks/block--rates.twig' with {
+                'block' : block,
+                'block_modifier' : 'rates'
+            } %}
+
+        {% elseif block.acf_fc_layout == 'block_video' %}
+
+            {% include 'partials/blocks/block--video.twig' with {
+                'block' : block,
+                'block_modifier' : 'video'
+            } %}
+
+        {% endif %}
+
+    {% endfor %}
+
+    {% if block_type_string %}
+        <div class="container built-with">
+            {{ __( 'This page was built with the following block(s)', 'turnkey' ) }}: {{ block_type_string }}.
+        </div>
+    {% endif %}
+
+{% endif %}
+
+

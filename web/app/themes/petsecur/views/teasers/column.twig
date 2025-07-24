@@ -1,0 +1,57 @@
+{# used by flexible content blocks #}
+{% import 'partials/macros.twig' as macro %}
+{% if column.image %}
+    {% set column_image = get_image( column.image ) %}
+{% endif %}
+
+<div class="column-item{% if column_image %} with-image{% endif %}">
+    <div class="column__top">
+        {% if column.icon %}
+            <div class="column__label">
+                {{ macro.fa(column.icon) }}
+            </div>
+        {% endif %}
+        {% if column.link %}
+            <div class="column__link">
+                <a href="{{ column.link.url }}">
+                    {{ macro.fa('fas fa-chevron-right') }}
+                </a>
+            </div>
+        {% endif %}
+    </div>
+
+    {% if column.header %}
+        <header class="column__header">
+            {{ column.header }}
+        </header>
+    {% endif %}
+
+    {% if column_image %}
+        <picture class="column__image">
+            {{ macro.image( column_image, 'image_text', '', '', '', '' ) }}
+        </picture>
+    {% endif %}
+
+    {% if column.content %}
+        <div class="column__content">
+            {{ column.content }}
+        </div>
+    {% endif %}
+
+    {% if column.button.url and column.button.title %}
+        {% include 'partials/blocks/block__button.twig' with {
+            'button_link'     : column.button.url,
+            'button_text'     : column.button.title,
+            'button_modifier' : 'column',
+            'target_blank'    : column.button.target
+        } %}
+    {% else %}
+        {% if is_main_site and column.show_tbc %}
+            <div class="block__button block__button--tbc">
+                <div class="tbc">
+                    TBC
+                </div>
+            </div>
+        {% endif %}
+    {% endif %}
+</div>

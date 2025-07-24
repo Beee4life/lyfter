@@ -1,0 +1,6 @@
+{% set gtm_code = options.google.tag_manager_code %}
+{% if gtm_code is not empty %}
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id={{ gtm_code }}" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+{% endif %}

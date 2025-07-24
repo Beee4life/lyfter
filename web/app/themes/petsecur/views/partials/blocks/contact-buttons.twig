@@ -1,0 +1,21 @@
+<div class="contact__buttons">
+    {% if 'phone' in block.buttons %}
+        {# @TODO: dynamic link #}
+        {% set phone_link = 'tel:+31612345678' %}
+        {% include 'partials/blocks/block__button.twig' with {
+            'button_link'     : phone_link,
+            'button_text'     : block.phone_button_text|default(__( 'CALL US', 'turnkey' )),
+            'button_modifier' : 'contact block__button--contact-phone'
+        } %}
+    {% endif %}
+
+    {% if 'form' in block.buttons %}
+        {# @TODO: dynamic link #}
+        {% set form_link = '/contact/' %}
+        {% include 'partials/blocks/block__button.twig' with {
+            'button_link'     : form_link,
+            'button_text'     : block.form_button_text|default(__( 'REQUEST INFO', 'turnkey' )),
+            'button_modifier' : 'contact block__button--contact-form'
+        } %}
+    {% endif %}
+</div>

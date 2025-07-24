@@ -1,0 +1,18 @@
+{% import 'partials/macros.twig' as macro %}
+
+{% if intro.title %}
+    <div class="container">
+        <div class="article__intro">
+            <div class="article__intro--left">
+                {% include 'partials/intro-label.twig' %}
+                {% include 'partials/intro-title.twig' %}
+                {% include 'partials/intro-text.twig' %}
+                {% include 'partials/intro-buttons.twig' %}
+            </div>
+            <div class="article__intro--right">
+                {% set intro_image = get_image(186) %}
+                {{ macro.image(intro_image, 'full') }}
+            </div>
+        </div>
+    </div>
+{% endif %}

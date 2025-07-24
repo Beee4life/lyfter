@@ -1,0 +1,14 @@
+{% import 'partials/macros.twig' as macro %}
+<div class="site__navigation">
+    <div class="nav__extend">
+        <div class="container">
+            {% include 'partials/nav.twig' with {
+                'modifier' : 'foldout',
+                'items'    : menu_main.get_items,
+            } %}
+            <div class="nav__trigger--close">
+                {{ macro.fa('fas fa-times') }}
+            </div>
+        </div>
+    </div>
+</div>

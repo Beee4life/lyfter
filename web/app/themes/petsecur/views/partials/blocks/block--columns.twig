@@ -1,0 +1,27 @@
+<section class="{{ get_block_classes(block,block_modifier) }}"{% if block.background_color %} style="background-color: {{ block.background_color }}"{% endif %}>
+    <div class="container">
+
+        {% if block.header %}
+            <div class="block__header">
+                <h3 class="block__header">
+                    {{ block.header }}
+                </h3>
+            </div>
+        {% endif %}
+
+        {% if block.columns %}
+
+            {% set column_amount = block.amount_columns|default(2) %}
+            {% set modifier      = 'columns' %}
+            {% set extra_class   = false %}
+
+            <div class="columns columns--{{ column_amount }}">
+                {% for column in block.columns %}
+                    {% include 'teasers/column.twig' with {
+                        'column': column
+                    } %}
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+</section>

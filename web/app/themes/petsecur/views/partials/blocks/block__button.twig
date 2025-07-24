@@ -1,0 +1,6 @@
+{% import 'partials/macros.twig' as macro %}
+{% if button_link and button_text %}
+    <div class="block__button{% if button_modifier %} block__button--{{ button_modifier }}{% endif %}">
+        {{ macro.button( button_link, button_text, '', button_target, button_icon ) }}
+    </div>
+{% endif %}

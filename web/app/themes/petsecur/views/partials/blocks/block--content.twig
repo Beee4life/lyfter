@@ -1,0 +1,12 @@
+<section class="{{ get_block_classes(block,block_modifier) }}"{{ get_block_style(block) }}>
+    <div class="container">
+        {% include 'partials/blocks/block__header.twig' with {
+            'header'   : block.header,
+            'modifier' : 'content'
+        } %}
+
+        <div class="block__content entry-content">
+            {{ block.content|shortcodes }}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,50 @@
+{% macro button( button_link, button_text, button_class, button_target, button_icon ) %}
+    {% import _self as macro %}
+
+    <a href="{{ button_link }}" class="button{% if button_class %} button--{{ button_class }}{% endif %}"{% if button_target %} target="_blank" rel="noopener"{% endif %}>
+        <span class="button__label">{{ button_text }}</span>
+        <span class="button__icon">{{ macro.fa( button_icon ) }}</span>
+    </a>
+{% endmacro %}
+
+{% macro fa( id ) %}
+    {% if id %}
+        <i class="{{ id }}"></i>
+    {% endif %}
+{% endmacro %}
+
+{% macro image( image, size, fallback, alt, title, class ) %}
+    {% set size = size|default('') %}
+    {% set fallback = fallback|default(0) %}
+
+    {% if image and image.src %}
+        <img src="{{ image.src(size) }}"{% if alt %} alt="{{ alt }}"{% elseif image.alt %} alt="{{ image.alt }}"{% endif %}{% if title %} title="{{ title }}"{% endif %}{% if class %} class="{{ class }}"{% endif %} />
+    {% elseif fallback %}
+        {% if '.' not in fallback %}
+            {% set fallback_image = get_image(fallback) %}
+            <img src="{{ fallback_image.src(size) }}"{% if alt %} alt="{{ alt }}"{% elseif image.alt %} alt="{{ image.alt }}"{% endif %}{% if title %} title="{{ title }}"{% endif %}{% if class %} class="{{ class }}"{% endif %} />
+        {% else %}
+            <img src="{{ fallback }}" alt="fallback" />
+        {% endif %}
+    {% endif %}
+{% endmacro %}
+
+{% macro imagesrcset(image, sizenormal, sizeretina, fallback, alt, title, class ) %}
+    {% set sizenormal = sizenormal|default('') %}
+    {% set sizeretina = sizeretina|default('') %}
+    {% set fallback = fallback|default(0) %}
+
+    {% if image and image.src %}
+        <img  src="{{ image.src(sizenormal) }}"
+            {% if sizenormal and sizeretina %}
+                srcset="{{ image.src(sizenormal) }} 1x, {{ image.src(sizeretina) }} 2x"
+            {% endif %}
+              alt="{% if alt %}{{ alt }}{% elseif image.alt %}{{ image.alt }}{% endif %}"
+              title="{% if title %}{{ title }}{% else %}{{ image.title }}{% endif %}"
+            {% if class %} class="{{ class }}"{% endif %}>
+        />
+    {% elseif fallback %}
+        <img src="{{ fallback }}" alt="" title="" />
+    {% endif %}
+{% endmacro %}
+

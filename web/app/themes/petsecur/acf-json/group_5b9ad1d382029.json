@@ -1,0 +1,59 @@
+{
+    "key": "group_5b9ad1d382029",
+    "title": "Singulars",
+    "fields": [
+        {
+            "key": "field_5d90ee972f7c1",
+            "label": "Hide header",
+            "name": "bp_hide_header",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Slide this option to hide the header (if you need to for some reason)",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "Hide",
+            "ui_off_text": "Show"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "single post types",
+    "show_in_rest": 0,
+    "modified": 1753270261
+}

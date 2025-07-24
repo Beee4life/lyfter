@@ -1,0 +1,25 @@
+{% if items %}
+    <nav role="navigation" class="nav{% if modifier %} nav--{{ modifier }}{% endif %}">
+        <ul class="nav__list{% if modifier %} nav__list--{{ modifier }}{% endif %}">
+            {% for item in items %}
+                {% set children = item.children %}
+                <li class="nav__list-item{% if modifier %} nav__list-item--{{ modifier }}{% endif %}{% if children %} has__children{% endif %}{% if item.class %} {{ item.class }}{% endif %}">
+                    <a class="nav__link" href="{{ item.link }}">{{ item.title }}</a>
+                    {% if children %}
+                        <div class="nav__dropdown">
+                            <ul class="nav__dropdown--wrapper">
+                                {% for child in children %}
+                                    <li class="nav__dropdown--item">
+                                        <a class="nav__link nav__dropdown--link" href="{{ child.link }}">
+                                            {{ child.name }}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+{% endif %}

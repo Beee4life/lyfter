@@ -1,0 +1,11 @@
+{% if false == hide_header %}
+    {% if title or post.title %}
+        <h1 class="{{ header|default('article') }}__heading{% if alignment %} align-{{ alignment }}{% endif %}">
+            {% if title %}
+                {{ title }}
+            {% elseif post.title %}
+                {{ post.title }}
+            {% endif %}
+        </h1>
+    {% endif %}
+{% endif %}

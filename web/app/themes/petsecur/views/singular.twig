@@ -1,0 +1,13 @@
+{% extends 'base-singular.twig' %}
+
+{% block content %}
+
+    {% if blocks %}
+        {% include 'partials/blocks.twig' %}
+    {% else %}
+        <div class="entry-content">
+            {{ post.content }}
+        </div>
+    {% endif %}
+
+{% endblock %}

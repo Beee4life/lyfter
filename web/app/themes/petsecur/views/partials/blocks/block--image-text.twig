@@ -1,0 +1,57 @@
+{% import 'partials/macros.twig' as macro %}
+{% if options.settings.show_dummies == 1 %}
+    {% set image = false %}
+{% elseif block.image %}
+    {% set image = get_image( block.image ) %}
+{% endif %}
+
+<section class="{{ get_block_classes(block,block_modifier) }}">
+
+    <div class="container">
+        <div class="block__image{% if block.rotate_image %} skewed-background{% endif %}"{{ get_block_style(block) }}>
+            {% if block.break_out_bg %}
+                <div class="block__bg">
+                </div>
+            {% endif %}
+            {{ macro.image(image, 'medium_large', options.fallback_images.image_text) }}
+        </div>
+
+        {% if block.text %}
+            <div class="block__content">
+                {% if block.label %}
+                    <div class="block__label">
+                        <span class="dot"></span>
+                        {{ block.label }}
+                    </div>
+                {% endif %}
+
+                {% include 'partials/blocks/block__header.twig' with {
+                    'header'   : block.header,
+                    'modifier' : 'image-text'
+                } %}
+
+                {% if block.text %}
+                    <div class="block__text">
+                        {{ block.text }}
+                    </div>
+                {% endif %}
+
+                {% if block.buttons %}
+                    <div class="block__buttons">
+                        {% for button in block.buttons %}
+                            {% include 'partials/blocks/block__button.twig' with {
+                                'button_link'     : button.button_link,
+                                'button_text'     : button.button_text,
+                                'button_target'   : button.button_target,
+                                'button_icon'     : button.button_icon,
+                                'button_modifier' : 'image-text'
+                            } %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+            </div>
+        {% endif %}
+    </div>
+
+</section>
