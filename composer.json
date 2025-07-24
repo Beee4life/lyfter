@@ -28,26 +28,6 @@
       "type": "composer",
       "url": "https://wpackagist.org",
       "only": ["wpackagist-plugin/*", "wpackagist-theme/*"]
-    },
-    {
-      "type":    "package",
-      "package": {
-        "name":    "hube2/acf-input-counter",
-        "type":    "wordpress-plugin",
-        "version": "1.5",
-        "dist":    {
-          "type": "zip",
-          "url":  "https://github.com/hube2/acf-input-counter/archive/master.zip"
-        }
-      }
-    },
-    {
-      "type":"composer",
-      "url":"https://connect.advancedcustomfields.com"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/Beee4life/b3-onboarding"
     }
   ],
   "require":      {
@@ -64,21 +44,13 @@
     "roots/wp-config":                  "1.0.0",
     "roots/wp-password-bcrypt":         "1.0.0",
 
-    "beee4life/b3-onboarding":                 "^3.11.0",
-    "hube2/acf-input-counter":                 "^1.0",
     "timber/timber":                           "^2.0",
 
-    "wpackagist-plugin/acf-content-analysis-for-yoast-seo": "^3.0",
-    "wpackagist-plugin/classic-editor":                     "^1.0",
-    "wpackagist-plugin/classic-widgets":                    "*",
     "wpackagist-plugin/disable-comments":                   "^2.0",
     "wpackagist-plugin/disable-json-api":                   "^1.0",
     "wpackagist-plugin/redirection":                        "^5.3",
-    "wpackagist-plugin/regenerate-thumbnails":              "^3.0",
-    "wpackagist-plugin/user-role-editor":                   "^4.0",
     "wpackagist-plugin/svg-support":                        "^2.5.0",
-    "wpackagist-plugin/wordpress-seo":                      "^25.0",
-    "wpackagist-plugin/wp-crontrol":                        "^1.0"
+    "wpackagist-plugin/wordpress-seo":                      "^25.0"
   },
   "require-dev":  {
     "wpackagist-plugin/monkeyman-rewrite-analyzer":   "^1.0",
